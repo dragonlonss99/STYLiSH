@@ -1,0 +1,44 @@
+h1 {
+  font-size: 25px;
+  margin-top: 30px;
+}
+
+h2 {
+  font-size: 20px;
+}
+.containFeature {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 300px;
+  width: 100%;
+  padding: 20px;
+  text-align: center;
+  box-sizing: border-box;
+}
+.containFeature > div {
+  width: 100%;
+  margin-top: 20px;
+}
+.line {
+  width: 80%;
+  height: 1px;
+  background-color: black;
+}
+
+.orederNumber > div {
+  display: inline-block;
+  background-color: #eeeeee;
+  padding: 5px 10px;
+  height: 16px;
+  width: auto;
+  color: black;
+}
+
+.keepBuy {
+  cursor: pointer;
+}
+
+.keepBuy:hover {
+  color: #8b572a;
+}

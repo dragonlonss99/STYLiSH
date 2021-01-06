@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-7HHN11YKCG"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "G-7HHN11YKCG");
+    </script>
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="css/index.css" />
+    <link rel="stylesheet" href="css/thankyou.css" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="description" content="Shopping for men and women" />
+    <meta name="keywords" content="Stylish men women accessories" />
+    <title>Stylish 感謝您</title>
+  </head>
+  <body>
+    <!-- <div id="loading" class="loading">
+      <img src="imgs/loading.gif" />
+    </div> -->
+    <header>
+      <a href="./index.html" class="logo">
+        <img src="imgs/logo.png" alt="logo" class="logo" onclick="gotoHome()"
+      /></a>
+      <div class="search" onclick="focusMethod()"></div>
+      <!-- <input type="text" name="" value="" class="search" /> -->
+      <!-- <input type="text" name="" value="" class="searchbarTop" /> -->
+      <!-- <input type="submit"  style="display:none;"class = submitInput/> -->
+      <nav class="navFeature">
+        <div class="itemNotChoose" id="women">
+          <a href="./index.html?tag=women">女裝</a>
+        </div>
+        <div class="insert">|</div>
+        <div class="itemNotChoose" id="men">
+          <a href="./index.html?tag=men">男裝</a>
+        </div>
+        <div class="insert">|</div>
+        <div class="itemNotChoose" id="accessories">
+          <a href="./index.html?tag=accessories">配件</a>
+        </div>
+      </nav>
+      <div class="inputFeature">
+        <form id="doSearch">
+          <input type="text" class="web_searchbar" id="searchInput" />
+          <!-- <input type="submit"  style="display:none;"class = submitInput/> -->
+        </form>
+        <div class="cart" onclick="goToCart()">
+          <div class="cart-qty">0</div>
+        </div>
+        <div class="member" onclick="loginFB()"></div>
+      </div>
+    </header>
+    <div class="base"></div>
+    <main>
+      <div class="headerArea"></div>
+      <div class="containFeature">
+        <div><h1>感謝您的購買，我們會盡快將商品送達！</h1></div>
+        <br />
+        <div class="line"></div>
+        <div><h2>請記住以下訂單編號，以便查詢</h2></div>
+        <div class="orederNumber">
+          <div></div>
+        </div>
+        <div><div class="keepBuy" onclick="gotoHome()">繼續購物</div></div>
+      </div>
+      <div class="fixBar">
+        <div class="fixCart">
+          <div onclick="goToCart()">
+            <div class="fixedIcon fixCartIcon">
+              <div class="cart-qty qty-mobile">0</div>
+            </div>
+            購物車
+          </div>
+        </div>
+        <div class="bar"></div>
+        <div class="fixMember">
+          <div onclick="loginFB()">
+            <img
+              src="imgs/member-mobile.png"
+              class="fixedIcon"
+              alt="memberIcon"
+            />會員
+          </div>
+        </div>
+      </div>
+    </main>
+    <footer>
+      <div class="footerNav">
+        <div class="footerItem"><a href="#">關於 Stylish</a></div>
+        <nav class="footerInsert">|</nav>
+        <div class="footerItemNot"><a href="#">服務條款</a></div>
+        <nav class="footerInsert">|</nav>
+        <div class="footerItemNot"><a href="#">隱私政策</a></div>
+        <nav class="footerInsert">|</nav>
+        <div class="footerItemNot"><a href="#">聯絡我們</a></div>
+        <nav class="footerInsert">|</nav>
+        <div class="footerItemNot"><a href="#">FAQ</a></div>
+      </div>
+      <div class="footerIcon">
+        <div class="lineImg"></div>
+        <div class="twitterImg"></div>
+        <div class="facebookImg"></div>
+      </div>
+      <div class="copyright">&copy; 2020. All rights reserved.</div>
+    </footer>
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-app.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-analytics.js"></script>
+
+    <script>
+      // Your web app's Firebase configuration
+      // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+      var firebaseConfig = {
+        apiKey: "AIzaSyAr2jcwxlhTVN-yJaoLCKNzVIvpaO8G2cE",
+        authDomain: "stylish-db94e.firebaseapp.com",
+        databaseURL: "https://stylish-db94e.firebaseio.com",
+        projectId: "stylish-db94e",
+        storageBucket: "stylish-db94e.appspot.com",
+        messagingSenderId: "131887414734",
+        appId: "1:131887414734:web:69f7233622f0007fc13f9f",
+        measurementId: "G-0Y7CYTVWGR",
+      };
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+      firebase.analytics();
+    </script>
+  </body>
+  <script src="js/thankyou.js"></script>
+  <script src="js/common.js"></script>
+</html>

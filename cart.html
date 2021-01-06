@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-7HHN11YKCG"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "G-7HHN11YKCG");
+    </script>
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="css/index.css" />
+    <link rel="stylesheet" href="css/cart.css" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="description" content="Shopping for men and women" />
+    <meta name="keywords" content="Stylish men women accessories" />
+    <script src="https://js.tappaysdk.com/tpdirect/v5.4.0"></script>
+    <!-- <script>
+      TPDirect.setupSDK(12348, 'app_pa1pQcKoY22IlnSXq5m5WP5jFKzoRG58VEXpT7wU62ud7mMbDOGzCYIlzzLF', 'sandbox')
+    </script> -->
+    <title>Stylish 購物車</title>
+  </head>
+  <body>
+    <div id="loading" class="loading">
+      <img src="imgs/loading.gif" />
+    </div>
+    <div id="loading" class="loading">
+      <img src="imgs/loading.gif" />
+    </div>
+    <header>
+      <a href="./index.html" class="logo">
+        <img src="imgs/logo.png" alt="logo" class="logo" onclick="gotoHome()"
+      /></a>
+      <div class="search" onclick="focusMethod()"></div>
+      <nav class="navFeature">
+        <div class="itemNotChoose" id="women">
+          <a href="./index.html?tag=women">女裝</a>
+        </div>
+        <div class="insert">|</div>
+        <div class="itemNotChoose" id="men">
+          <a href="./index.html?tag=men">男裝</a>
+        </div>
+        <div class="insert">|</div>
+        <div class="itemNotChoose" id="accessories">
+          <a href="./index.html?tag=accessories">配件</a>
+        </div>
+      </nav>
+      <div class="inputFeature">
+        <form id="doSearch">
+          <input
+            type="text"
+            name=""
+            value=""
+            class="web_searchbar"
+            id="searchInput"
+          />
+          <!-- <input type="submit"  style="display:none;"class = submitInput/> -->
+        </form>
+        <div class="cart" onclick="goToCart()">
+          <div class="cart-qty">0</div>
+        </div>
+        <div class="member" onclick="loginFB()"></div>
+      </div>
+    </header>
+    <div class="base"></div>
+    <main>
+      <div class="headerArea"></div>
+      <div class="containFeature">
+        <div class="rowTitle">
+          <div class="empty"></div>
+          <div class="countOfBox">
+            <div class="countOfP">數量</div>
+            <div class="priceOfP">單價</div>
+            <div class="totalOfP">小計</div>
+          </div>
+          <div class="empty3"></div>
+        </div>
+        <div class="productBox"></div>
+        <div class="shipment">
+          <div class="ship">
+            <div>配送國家</div>
+            <select>
+              <option>台灣或離島</option>
+            </select>
+          </div>
+          <div class="pay">
+            <div>付款方式</div>
+            <select>
+              <option>信用卡付款</option>
+            </select>
+          </div>
+        </div>
+        <div class="notice">
+          <p>※ 提醒您：</p>
+          <p>● 請填寫正確收件人資訊，避免包裹配送不達</p>
+          <p>● 請填寫正確收件人姓名 ( 與證件相符 )，避免無法領取</p>
+        </div>
+        <div class="receiveBox">
+          <div class="title">收件資料</div>
+          <div class="blackLine"></div>
+          <div class="receive">收件人姓名</div>
+          <input type="text" id="orderName" />
+          <br />
+          <div class="receive">Email</div>
+          <input type="email" id="orderEmail" />
+          <br />
+          <div class="receive">手機號碼</div>
+          <input type="text" id="orderPhone" maxlength="10" />
+          <br />
+          <div class="receive">收件地址</div>
+          <input type="text" id="orderAddress" />
+          <br />
+          <div class="receive">配送時間</div>
+          <div>
+            <input
+              type="radio"
+              name="time"
+              value="08:00 - 12:00"
+              class="timeCheck"
+            /><span>08:00 - 12:00</span>
+            <input
+              type="radio"
+              name="time"
+              value="14:00 - 18:00"
+              class="timeCheck"
+            /><span>14:00 - 18:00</span>
+            <input
+              type="radio"
+              name="time"
+              value="anytime"
+              class="timeCheck"
+              checked
+            /><span>不指定</span>
+          </div>
+        </div>
+        <div class="paymentBox">
+          <div class="title">付款資料</div>
+          <div class="blackLine"></div>
+          <div class="credit-card">
+            <div class="receive">信用卡號碼</div>
+            <div class="tpfield" id="card-number"></div>
+          </div>
+          <!-- <br> -->
+          <div class="credit-card">
+            <div class="receive">有效期限</div>
+            <div class="tpfield" id="card-expiration-date"></div>
+          </div>
+          <!-- <br> -->
+          <div class="credit-card">
+            <div class="receive">安全碼</div>
+            <div class="tpfield" id="card-ccv"></div>
+          </div>
+          <!-- <br> -->
+          <div class="blackLine"></div>
+        </div>
+        <div class="bottom">
+          <div class="totalBox title">
+            <div>總金額</div>
+            <div class="totalCount">NT. 0</div>
+            <br />
+            <div>運費</div>
+            <div class="shipFee">NT. 60</div>
+            <br />
+            <div class="blackLine2"></div>
+            <br />
+            <div>應付金額</div>
+            <div class="totalCharge">NT. 60</div>
+            <br />
+          </div>
+
+          <button class="checkout" id="submit" onclick="onSubmit(event)">
+            確認付款
+          </button>
+        </div>
+      </div>
+      <div class="fixBar">
+        <div class="fixCart">
+          <div onclick="goToCart()">
+            <div class="fixedIcon fixCartIcon">
+              <div class="cart-qty qty-mobile">0</div>
+            </div>
+            購物車
+          </div>
+        </div>
+        <div class="bar"></div>
+        <div class="fixMember">
+          <div onclick="loginFB()">
+            <img
+              src="imgs/member-mobile.png"
+              class="fixedIcon"
+              alt="memberIcon"
+            />會員
+          </div>
+        </div>
+      </div>
+    </main>
+    <footer>
+      <div class="footerNav">
+        <div class="footerItem"><a href="#">關於 Stylish</a></div>
+        <nav class="footerInsert">|</nav>
+        <div class="footerItemNot"><a href="#">服務條款</a></div>
+        <nav class="footerInsert">|</nav>
+        <div class="footerItemNot"><a href="#">隱私政策</a></div>
+        <nav class="footerInsert">|</nav>
+        <div class="footerItemNot"><a href="#">聯絡我們</a></div>
+        <nav class="footerInsert">|</nav>
+        <div class="footerItemNot"><a href="#">FAQ</a></div>
+      </div>
+      <div class="footerIcon">
+        <div class="lineImg"></div>
+        <div class="twitterImg"></div>
+        <div class="facebookImg"></div>
+      </div>
+      <br />
+      <div class="copyright">&copy; 2020. All rights reserved.</div>
+    </footer>
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-app.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-analytics.js"></script>
+
+    <script>
+      // Your web app's Firebase configuration
+      // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+      var firebaseConfig = {
+        apiKey: "AIzaSyAr2jcwxlhTVN-yJaoLCKNzVIvpaO8G2cE",
+        authDomain: "stylish-db94e.firebaseapp.com",
+        databaseURL: "https://stylish-db94e.firebaseio.com",
+        projectId: "stylish-db94e",
+        storageBucket: "stylish-db94e.appspot.com",
+        messagingSenderId: "131887414734",
+        appId: "1:131887414734:web:69f7233622f0007fc13f9f",
+        measurementId: "G-0Y7CYTVWGR",
+      };
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+      firebase.analytics();
+    </script>
+  </body>
+  <script src="js/cart.js"></script>
+  <script src="js/common.js"></script>
+</html>
