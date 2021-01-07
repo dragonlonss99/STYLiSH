@@ -69,10 +69,10 @@ FBinit();
 function FBinit() {
   window.fbAsyncInit = function () {
     FB.init({
-      appId: "1263495637336609",
+      appId: "280135086649634",
       cookie: true,
       xfbml: true,
-      version: "v8.0",
+      version: "v9.0",
     });
     // FB.AppEvents.logPageView();
     FB.getLoginStatus(function (response) {
@@ -82,8 +82,7 @@ function FBinit() {
         // console.log(location.pathname);
         if (
           location.pathname === "/profile.html" ||
-          location.pathname ===
-            "/Front-End-Class-Batch12/students/AaronSu/stylish/profile.html"
+          location.pathname === "/STYLiSH/profile.html"
         ) {
           getFBdataFromAPI(fbData);
         }
